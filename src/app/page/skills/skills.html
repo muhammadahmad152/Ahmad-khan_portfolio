@@ -1,1 +1,44 @@
-<p>skills works!</p>
+<section class="skills-page section-shell">
+  <div class="page-wrap">
+    <div class="section-intro skills-heading">
+      <span class="eyebrow">03 / TOOLS OF THE TRADE</span>
+      <h1>My growing<br><span class="accent-text">technical toolkit.</span></h1>
+      <p>A practical snapshot of the technologies I've studied and used in projects. I'm still learning, and this
+        toolkit will keep evolving.</p>
+    </div>
+
+    <div class="skills-layout">
+      <div class="skills-matrix">
+        @for (group of skillGroups; track group.number) {
+        <article class="skill-group">
+          <div class="skill-group-top"><span>{{ group.number }} / DISCIPLINE</span><span class="group-signal"></span>
+          </div>
+          <h2>{{ group.name }}</h2>
+          <p>{{ group.description }}</p>
+          <div class="skill-tags">
+            @for (skill of group.skills; track skill) { <span>{{ skill }}</span> }
+          </div>
+        </article>
+        }
+      </div>
+
+      <aside class="focus-panel">
+        <span class="panel-index">NEXT ON THE RADAR</span>
+        <div class="radar-art">
+          <div class="radar-ring ring-a"></div>
+          <div class="radar-ring ring-b"></div>
+          <div class="radar-sweep"></div><span class="radar-center">+</span><i class="radar-point"></i>
+        </div>
+        <h2>Areas I'm exploring</h2>
+        <p>These are developing interests and future learning directions, not claimed professional specializations.</p>
+        <ul>
+          @for (area of focusAreas; track area; let i = $index) {
+          <li><span>0{{ i + 1 }}</span>{{ area }}<b>↗</b></li>
+          }
+        </ul>
+      </aside>
+    </div>
+    <div class="skills-foot"><span>STATUS / CONTINUOUS LEARNING</span><span>KNOWLEDGE IS A WORK IN PROGRESS
+        <b>↗</b></span></div>
+  </div>
+</section>

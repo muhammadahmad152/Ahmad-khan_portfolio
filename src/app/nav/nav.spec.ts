@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideRouter } from '@angular/router';
 import { Nav } from './nav';
 
 describe('Nav', () => {
@@ -8,6 +9,7 @@ describe('Nav', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [Nav],
+      providers: [provideRouter([])]
     }).compileComponents();
 
     fixture = TestBed.createComponent(Nav);
@@ -15,7 +17,13 @@ describe('Nav', () => {
     await fixture.whenStable();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should create', () => expect(component).toBeTruthy());
+
+  it('should toggle the mobile menu state', () => {
+    expect(component.menuOpen).toBe(false);
+    component.toggleMenu();
+    expect(component.menuOpen).toBe(true);
+    component.closeMenu();
+    expect(component.menuOpen).toBe(false);
   });
 });

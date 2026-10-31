@@ -1,1 +1,45 @@
-<p>contactus works!</p>
+<section class="contact-page section-shell">
+  <div class="page-wrap">
+    <div class="contact-heading">
+      <span class="eyebrow">05 / OPEN CHANNEL</span>
+      <h1>Have a thought?<br><span>Let's connect.</span></h1>
+      <p>Good work often starts with a conversation. Reach out about technology, collaboration or an idea you'd like to
+        discuss.</p>
+    </div>
+
+    <div class="contact-layout">
+      <div class="contact-copy">
+        <span class="contact-index">COMMUNICATION CHANNELS</span>
+        <h2>Choose your<br><em>way to connect.</em></h2>
+        <p>I'm continuing to learn and build. Thoughtful conversations and opportunities to collaborate are always
+          welcome.</p>
+        <div class="contact-channel">
+          <span class="channel-icon">@</span>
+          <div><small>EMAIL</small><a [href]="'mailto:' + email">{{ email }} <b>↗</b></a></div>
+        </div>
+        <div class="contact-channel">
+          <span class="channel-icon">GH</span>
+          <div><small>GITHUB</small><a [href]="github" target="_blank"
+              rel="noopener noreferrer">github.com/muhammadahmad152 <b>↗</b></a></div>
+        </div>
+      </div>
+
+      <div class="contact-terminal">
+        <div class="terminal-bar">
+          <div><i></i><i></i><i></i></div><span>NEW_CONNECTION.request</span><span>SECURE / 01</span>
+        </div>
+        <div class="terminal-body">
+          <p class="terminal-line"><span>01</span> A good idea deserves a first conversation.</p>
+          <p class="terminal-line"><span>02</span> Share what you're thinking about.</p>
+          <p class="terminal-line"><span>03</span> Let's see what we can learn or build.</p>
+          <div class="terminal-divider"></div>
+          <small>INITIATE CONTACT</small>
+          <a class="contact-button" [href]="'mailto:' + email">SEND AN EMAIL <span>↗</span></a>
+          <p class="terminal-foot">ENDPOINT: {{ email }}</p>
+        </div>
+        <div class="terminal-corner">AK / 2026</div>
+      </div>
+    </div>
+    <div class="contact-footer-line"><span>THANK YOU FOR VISITING</span><span>BUILT WITH ANGULAR <b>✳</b></span></div>
+  </div>
+</section>

@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
 
 @Component({
-  imports: [],
   selector: 'app-contactus',
-  styleUrl: './contactus.css',
+  imports: [],
   templateUrl: './contactus.html',
+  styleUrl: './contactus.css'
 })
-export class Contactus {}
+export class Contactus {
+  email = 'ahmadkhan20093@gmail.com';
+  github = 'https://github.com/muhammadahmad152';
+}

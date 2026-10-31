@@ -1,1 +1,104 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  color-scheme: dark;
+  --bg: #080d16;
+  --bg-soft: #0d1421;
+  --panel: #101a2a;
+  --panel-strong: #142238;
+  --line: rgba(160, 185, 214, .14);
+  --line-strong: rgba(160, 185, 214, .25);
+  --text: #edf5ff;
+  --muted: #91a2b8;
+  --muted-strong: #b6c4d6;
+  --cyan: #69e2f4;
+  --cyan-bright: #9af1fb;
+  --lime: #c7f36b;
+  --mono: 'DM Mono', 'Consolas', monospace;
+  --display: 'Space Grotesk', 'Segoe UI', sans-serif;
+  --page-width: 1240px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; background: var(--bg); }
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(ellipse at 78% 0%, rgba(24, 96, 128, .13), transparent 36rem),
+    var(--bg);
+  color: var(--text);
+  font-family: var(--display);
+  -webkit-font-smoothing: antialiased;
+}
+body, button, a { font-family: var(--display); }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; }
+button { color: inherit; }
+::selection { color: #06121a; background: var(--cyan); }
+:focus-visible { outline: 2px solid var(--lime); outline-offset: 4px; }
+
+.page-wrap { width: min(var(--page-width), calc(100% - 64px)); margin-inline: auto; }
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--cyan);
+  font: 500 11px/1.4 var(--mono);
+  letter-spacing: .17em;
+  text-transform: uppercase;
+}
+.eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--lime); box-shadow: 0 0 12px rgba(199,243,107,.5); }
+.accent-text { color: var(--cyan); }
+.mono { font-family: var(--mono); }
+.section-shell { position: relative; isolation: isolate; overflow: hidden; padding: clamp(72px, 9vw, 120px) 0; }
+.section-shell::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 500px;
+  height: 500px;
+  right: -300px;
+  top: 10%;
+  border: 1px solid rgba(105,226,244,.07);
+  border-radius: 50%;
+  box-shadow: 0 0 0 48px rgba(105,226,244,.018), 0 0 0 96px rgba(105,226,244,.012);
+  pointer-events: none;
+}
+.section-intro { max-width: 720px; margin-bottom: 48px; }
+.section-intro h1, .section-intro h2 {
+  margin: 16px 0 14px;
+  font-size: clamp(38px, 5vw, 62px);
+  line-height: 1.02;
+  letter-spacing: -.055em;
+  font-weight: 600;
+}
+.section-intro p { max-width: 610px; margin: 0; color: var(--muted); font-size: 16px; line-height: 1.85; }
+
+.action-link {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 0 19px;
+  border: 1px solid var(--cyan);
+  border-radius: 5px;
+  background: var(--cyan);
+  color: #07131b;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform .25s ease, background .25s ease, box-shadow .25s ease;
+}
+.action-link:hover { transform: translateY(-3px); background: var(--cyan-bright); box-shadow: 0 12px 32px rgba(105,226,244,.16); }
+.action-link.ghost { background: transparent; color: var(--text); border-color: var(--line-strong); }
+.action-link.ghost:hover { border-color: var(--cyan); color: var(--cyan); box-shadow: none; }
+
+@media (max-width: 700px) {
+  .page-wrap { width: min(100% - 36px, var(--page-width)); }
+  .section-intro { margin-bottom: 34px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}

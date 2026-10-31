@@ -1,1 +1,53 @@
-<p>project works!</p>
+<section class="projects-page section-shell">
+  <div class="page-wrap">
+    <div class="projects-heading">
+      <div class="section-intro">
+        <span class="eyebrow">04 / SELECTED EXPERIMENTS & BUILDS</span>
+        <h1>Ideas made<br><span class="accent-text">tangible.</span></h1>
+        <p>A selection of practice builds and larger experiments. Each one is a step in learning how to design, develop
+          and refine digital products.</p>
+      </div>
+      <div class="project-total"><strong>{{ projects.length < 10 ? '0' + projects.length : projects.length }}</strong>
+            <span>PROJECTS<br>IN THIS COLLECTION</span></div>
+    </div>
+
+    <div class="project-toolbar">
+      <div class="filter-list" aria-label="Filter projects">
+        @for (filter of filters; track filter) {
+        <button type="button" [class.is-active]="activeFilter === filter" (click)="setFilter(filter)">{{ filter
+          }}</button>
+        }
+      </div>
+      <span class="result-count">SHOWING {{ visibleProjects.length < 10 ? '0' + visibleProjects.length :
+          visibleProjects.length }} / {{ projects.length < 10 ? '0' + projects.length : projects.length }}</span>
+    </div>
+
+    <div class="projects-grid">
+      @for (project of visibleProjects; track project.number) {
+      <article class="project-card" [attr.data-project]="project.number">
+        <div class="project-art">
+          <div class="art-top"><span>AK / {{ project.number }}</span><span class="art-status"><i></i>{{ project.status
+              }}</span></div>
+          <div class="art-grid"></div>
+          <div class="art-main"><span class="art-orbit"></span><strong>{{ project.visual }}</strong></div>
+          <div class="art-bottom"><span>{{ project.label }}</span><span>↗</span></div>
+        </div>
+        <div class="project-content">
+          <div class="project-meta"><span>{{ project.category }}</span><span>{{ project.number }}</span></div>
+          <h2>{{ project.title }}</h2>
+          <p>{{ project.description }}</p>
+          <div class="project-tech">
+            @for (tech of project.technologies; track tech) { <span>{{ tech }}</span> }
+          </div>
+        </div>
+      </article>
+      }
+    </div>
+
+    <div class="projects-note"><span class="note-symbol">+</span>
+      <div><strong>THE COLLECTION IS GROWING</strong>
+        <p>More experiments and builds will be added as they are completed and documented.</p>
+      </div><span class="note-index">END / 00{{ visibleProjects.length }}</span>
+    </div>
+  </div>
+</section>

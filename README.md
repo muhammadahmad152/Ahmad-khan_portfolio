@@ -1,59 +1,46 @@
-# PracticeAngular
+# Ahmad Khan — Angular Developer Portfolio
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.2.4.
+A multi-page Angular portfolio with a futuristic dark interface, cyan/lime accents, responsive navigation, project filtering, and separate Home, About, Skills, Projects, and Contact pages.
 
-## Development server
+## Requirements
 
-To start a local development server, run:
+- Node.js 24.15+ (the original project was developed with Node.js 24.19.0)
+- npm 11+
 
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Run locally
 
 ```bash
-ng generate component component-name
+npm install
+ng serve -o
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+The development server opens at `http://localhost:4200/`.
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+## Production build
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Pages
 
-## Running unit tests
+- `/` — Home
+- `/about` — About
+- `/skills` — Skills
+- `/projects` — Projects (includes category filters)
+- `/contact` — Contact
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## Personal details to review
+
+- The email address is configured in `src/app/page/contactus/contactus.ts`.
+- The GitHub profile link is configured in `src/app/page/contactus/contactus.ts` and the footer.
+- Project cards currently use CSS-generated cover artwork rather than screenshots. Add real project screenshots and verified demo/repository URLs as those assets and links are ready.
+
+## Push updates to GitHub
 
 ```bash
-ng test
+git status
+git add .
+git commit -m "Redesign futuristic Angular portfolio"
+git push
 ```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
